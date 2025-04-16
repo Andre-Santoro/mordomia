@@ -1,5 +1,7 @@
 # MordomIA
 
+Foi utilizado a biblioteca Flet para ser feito esse app.
+
 ## Requisitos
 - Python 3.10+
 - Ollama instalado (https://ollama.com)

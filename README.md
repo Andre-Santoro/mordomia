@@ -1,12 +1,3 @@
-# MordomIA
+MordomIA
 
-## Requisitos
-- Python 3.10+
-- Ollama instalado (https://ollama.com)
-- Modelo `gemma:2b` instalado (`ollama pull gemma:2b`)
-
-## Como rodar
-
-```bash
-pip install -r requirements.txt
-python main.py
+MordomIA é um assistente virtual com personalidade de mordomo moderno, desenvolvido em Python e Streamlit. Projetado para oferecer interações educadas, diretas e sempre em português, o MordomIA possui recursos de personalização e integrações avançadas para tornar a experiência do usuário agradável e funcional.

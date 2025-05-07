@@ -19,15 +19,9 @@ def carregar_respostas_csv(nome_arquivo):
 
 comandos_disponiveis = carregar_respostas_csv("comandos.csv")
 
-def verificar_comando(mensagem_usuario, pagina, mensagens, historico_conversa):
+def verificar_comando(mensagem_usuario):
     mensagem_usuario = mensagem_usuario.strip().lower()
 
-    if mensagem_usuario == "/clear":
-        mensagens.controls.clear()
-        historico_conversa.value = ""
-        pagina.update()
-        return "Conversa limpa com sucesso!"
-    
     for chave, resposta in comandos_disponiveis:
         if chave == mensagem_usuario:
             return resposta

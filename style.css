@@ -1,0 +1,117 @@
+.titulo_pagina {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top:0;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.rodape-container {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 10px 0;
+    font-size: 12px;
+    color: white;
+    opacity: 0.7;
+    z-index: 999;     
+}
+
+.sidebar-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.custom-button {
+    width: 100%;
+    padding: 0.75em;
+    margin: 10px 0;
+    background-color: #bb1111;
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+.custom-button:hover {
+    background-color: #e0e0e0;
+}
+.sidebar-button-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* Estiliza os botões da navegação */
+button[data-testid="baseButton"] {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    text-align: center;
+}
+
+button[data-testid="baseButton"]:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.custom-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+/* Estilo dos botões personalizados */
+.custom-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.custom-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+button[kind="primary"] {
+    background-color: #FF4B4B;
+    color: white;
+    border-radius: 8px;
+    padding: 0.5em 1em;
+    font-size: 16px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+button[kind="primary"]:hover {
+    background-color: #e03d3d;
+}
+
+/* Texto dos botões */
+section[data-testid="stSidebar"] button {
+    font-weight: bold;
+    width: 100%;
+    margin-top: 0.25em;
+}

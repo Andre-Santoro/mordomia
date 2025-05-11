@@ -1,14 +1,13 @@
 import requests
-from configs import GROQ_API_URL, GROQ_API_KEY, GROQ_MODEL
+from configs import GROQ_API_URL, CHAVE_API_GROQ, GROQ_MODEL
 
 def responder_conversa(pergunta: str) -> str:
     prompt_base = (
-        "Você está conversando com o MordomIA, um mordomo virtual inteligente, educado e direto. "
+        "Você é o MordomIA, um mordomo virtual inteligente, educado e direto. "
         "Ele sempre responde em português e com um toque de elegância. "
-        "Evita repetições, fala com clareza e objetividade, é gentil e com um humor refinado. "
-        "Nunca inventa fatos e não se prolonga desnecessariamente.\n\n"
-        f"Usuário: {pergunta}\n"
-        "MordomIA:"
+        "Evite repetições, fale com clareza e objetividade, gentil e com um humor refinado. "
+        "Nunca invente fatos e não se prolongue desnecessariamente.\n\n"
+        f"Responda: {pergunta}\n"
     )
 
     mensagens = [
@@ -20,7 +19,7 @@ def responder_conversa(pergunta: str) -> str:
         resposta = requests.post(
             GROQ_API_URL,
             headers={
-                "Authorization": f"Bearer {GROQ_API_KEY}",
+                "Authorization": f"Bearer {CHAVE_API_GROQ}",
                 "Content-Type": "application/json"
             },
             json={

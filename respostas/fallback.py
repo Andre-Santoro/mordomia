@@ -4,8 +4,8 @@ import json
 
 def fallback(mensagem_enviada):
     try:
-        api_key = os.getenv("GROQ_API_KEY")
-        base_url = "https://api.groq.com/openai/v1"
+        chave_api = os.getenv("CHAVE_API_GROQ")
+        url_base = "https://api.groq.com/openai/v1"
 
         prompt = (
             "Você é MordomIA, um assistente educado, direto e sempre responde em português. "
@@ -15,7 +15,7 @@ def fallback(mensagem_enviada):
         )
 
         headers = {
-            "Authorization": f"Bearer {api_key}",
+            "Authorization": f"Bearer {chave_api}",
             "Content-Type": "application/json"
         }
 
@@ -29,7 +29,7 @@ def fallback(mensagem_enviada):
             "max_tokens": 1024
         }
 
-        response = requests.post(f"{base_url}/chat/completions", headers=headers, data=json.dumps(data))
+        response = requests.post(f"{url_base}/chat/completions", headers=headers, data=json.dumps(data))
 
         if response.status_code == 200:
             result = response.json()

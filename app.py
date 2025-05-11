@@ -4,8 +4,14 @@ from pagina.pagina_rodape import rodape
 from pagina.pagina_sobre import pagina_sobre
 from respostas.respostas_func import gerar_resposta
 from time import sleep
+import asyncio
+
+
 
 configuração_pagina()
+
+async def carregar_ia():
+    await asyncio.sleep(3)  # não bloqueia
 
 def main():
     with open("style.css") as f:
@@ -15,45 +21,22 @@ def main():
     if "boas_vindas_exibida" not in st.session_state:
         st.session_state.boas_vindas_exibida = True
         placeholder = st.empty()
-        placeholder.markdown("""
-        <style>
-        .fade-in-text {
-            font-size: 36px;
-            font-weight: bold;
-            color: white;
-            opacity: 0.2;
-            animation: fadein 1.5s forwards;
-            text-align: center;
-            margin-top: 200px;
-        }
-
-        @keyframes fadein {
-            0%   { opacity: 0.2; }
-            100% { opacity: 1.0; }
-        }
-
-        body {
-            background-color: #121212;
-        }
-        </style>
-
-        <div class="fade-in-text">Bem-vindo ao MordomIA</div>
-    """, unsafe_allow_html=True)
-        sleep(3)
-        placeholder.empty()
+        placeholder.markdown("""<div class="tela_boas_vindas">Bem-vindo ao MordomIA</div>""", 
+                             unsafe_allow_html=True)
+        asyncio.run(carregar_ia())
+        placeholder.markdown('')
+        
 
     st.markdown('<div class="titulo_pagina">MordomIA</div>', unsafe_allow_html=True)
     
-    # Navegação personalizada na barra lateral
     with st.sidebar:
-        st.markdown('<div class="sidebar-title">Navegação</div>', unsafe_allow_html=True)
+        st.markdown('<div class="titulo_sidebar">Navegação</div>', unsafe_allow_html=True)
         st.sidebar.divider()
 
         conversa = st.button("Conversa")
         st.markdown("<div style='height: 20px;'></div>", unsafe_allow_html=True)
         sobre = st.button("Sobre")
 
-    pagina = "Conversa" if st.session_state.get("pagina", "Conversa") == "Conversa" else "Sobre"
     if conversa:
         st.session_state.pagina = "Conversa"
     if sobre:

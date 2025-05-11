@@ -1,7 +1,6 @@
 import csv
 import os
 
-# Pega o caminho da pasta atual (respostas/)
 CAMINHO_PASTA = os.path.dirname(__file__)
 
 def carregar_respostas_csv(nome_arquivo):
@@ -18,7 +17,6 @@ def carregar_respostas_csv(nome_arquivo):
         print(f"Erro ao carregar {nome_arquivo}: {e}")
     return respostas
 
-# Carrega os dois arquivos da pasta atual
 respostas_personalizadas = carregar_respostas_csv("easter_eggs.csv")
 
 def verificar_easter_eggs(mensagem_usuario):

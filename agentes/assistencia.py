@@ -1,4 +1,4 @@
-from configs import GROQ_API_URL, GROQ_API_KEY, GROQ_MODEL
+from configs import GROQ_API_URL, CHAVE_API_GROQ, GROQ_MODEL
 import requests
 
 def responder_assistencia(pergunta: str) -> str:
@@ -9,7 +9,7 @@ def responder_assistencia(pergunta: str) -> str:
     resposta = requests.post(
         GROQ_API_URL,
         headers={
-            "Authorization": f"Bearer {GROQ_API_KEY}",
+            "Authorization": f"Bearer {CHAVE_API_GROQ}",
             "Content-Type": "application/json"
         },
         json={

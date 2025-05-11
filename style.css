@@ -1,3 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+
+.tela_boas_vindas {
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+            opacity: 0.2;
+            animation: fadein 1.5s forwards;
+            text-align: center;
+            margin-top: 200px;
+        }
+
+        @keyframes fadein {
+            0%   { opacity: 0.2; }
+            100% { opacity: 1.0; }
+        }
+
+        body {
+            background-color: #121212;
+        }
+
 .titulo_pagina {
     width: 100%;
     position: fixed;
@@ -10,7 +32,7 @@
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-.rodape-container {
+.rodape {
     width: 100%;
     position: fixed;
     bottom: 0;
@@ -24,7 +46,7 @@
     z-index: 999;     
 }
 
-.sidebar-title {
+.titulo_sidebar {
     text-align: center;
     font-size: 24px;
     font-weight: bold;
@@ -32,86 +54,27 @@
     margin-bottom: 30px;
 }
 
-.custom-button {
-    width: 100%;
-    padding: 0.75em;
-    margin: 10px 0;
-    background-color: #bb1111;
-    border: none;
-    border-radius: 8px;
-    text-align: center;
-    font-size: 16px;
-    cursor: pointer;
-}
-.custom-button:hover {
-    background-color: #e0e0e0;
-}
-.sidebar-button-container {
-    display: flex;
-    justify-content: center;
-}
-
-/* Estiliza os botões da navegação */
-button[data-testid="baseButton"] {
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-size: 18px;
-    padding: 8px 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    width: 100%;
-    text-align: center;
-}
-
-button[data-testid="baseButton"]:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.custom-button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    margin-top: 20px;
-}
-
-/* Estilo dos botões personalizados */
-.custom-button {
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-size: 18px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;
-    text-align: center;
-}
-
-.custom-button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-button[kind="primary"] {
-    background-color: #FF4B4B;
-    color: white;
-    border-radius: 8px;
-    padding: 0.5em 1em;
-    font-size: 16px;
-    border: none;
-    transition: background-color 0.3s ease;
-}
-
-button[kind="primary"]:hover {
-    background-color: #e03d3d;
-}
-
-/* Texto dos botões */
 section[data-testid="stSidebar"] button {
     font-weight: bold;
     width: 100%;
     margin-top: 0.25em;
+}
+
+section[data-testid="stSidebar"] button:hover {
+    border: none;
+}
+
+.container_sobre {
+max-width: 800px;
+margin: auto;
+padding: 30px 20px;
+text-align: center;
+font-family: 'Inter', sans-serif;
+color: white;            
+line-height: 1.6;
+}
+
+.container_sobre p {
+font-size: 18px;
+margin-bottom: 20px;
 }
